@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐍</text></svg>">
+    <title>CodeSage | Python Developer</title>
+<link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <!-- <script src="https://unpkg.com/feather-icons"></script> -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e293b',
+                        secondary: '#0f172a',
+                        accent: '#38bdf8'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-primary text-gray-100 min-h-screen font-sans">
+    <custom-navbar></custom-navbar>
+
+    <main class="container mx-auto px-4 py-12">
+        <!-- Hero Section -->
+        <section class="flex flex-col md:flex-row items-center justify-between gap-12 mb-20">
+            <div class="md:w-1/2 space-y-6">
+                <h1 class="text-4xl md:text-5xl font-bold">
+                    Hi, I'm <span class="text-accent">Nishant</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl text-gray-300">
+                    Python Developer
+                </h2>
+                <p class="text-gray-400 text-lg">
+                    I build efficient, scalable and clean code with modern Python technologies.
+                </p>
+                <div class="flex gap-4">
+                    <a href="projects.html" class="bg-accent hover:bg-blue-400 text-primary font-medium px-6 py-3 rounded-lg transition">
+                        View Projects
+                    </a>
+                    <a href="contact.html" class="border border-accent text-accent hover:bg-secondary font-medium px-6 py-3 rounded-lg transition">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <img src="http://static.photos/technology/640x360/42" alt="Developer workspace" class="rounded-xl shadow-2xl">
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold mb-8 text-center">My Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-secondary p-6 rounded-xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-feather="code" class="text-accent w-6 h-6"></i>
+                        <h3 class="text-xl font-semibold">Core Python</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <i data-feather="check" class="w-4 h-4 text-green-400"></i>
+                            Python 
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-feather="check" class="w-4 h-4 text-green-400"></i>
+                            OOP & Functional Programming
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-feather="check" class="w-4 h-4 text-green-400"></i>
+                            Algorithms & Data Structures
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-secondary p-6 rounded-xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-feather="database" class="text-accent w-6 h-6"></i>
+                        <h3 class="text-xl font-semibold">Backend</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <i data-feather="check" class="w-4 h-4 text-green-400"></i>
+                            Django
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-feather="check" class="w-4 h-4 text-green-400"></i>
+                            Django Rest Framework
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-feather="check" class="w-4 h-4 text-green-400"></i>
+                            PostgreSQL & MongoDB
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-secondary p-6 rounded-xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-feather="cloud" class="text-accent w-6 h-6"></i>
+                        <h3 class="text-xl font-semibold">DevOps</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <i data-feather="check" class="w-4 h-4 text-green-400"></i>
+                            Docker & Kubernetes
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-feather="check" class="w-4 h-4 text-green-400"></i>
+                            AWS & GCP
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-feather="check" class="w-4 h-4 text-green-400"></i>
+                            CI/CD Pipelines
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section class="mb-20">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold">Featured Projects</h2>
+                <a href="projects.html" class="text-accent hover:underline flex items-center gap-1">
+                    View All <i data-feather="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="bg-secondary rounded-xl overflow-hidden hover:shadow-lg transition">
+                    <img src="http://static.photos/technology/640x360/101" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">E-Commerce API</h3>
+                        <p class="text-gray-400 mb-4">A scalable e-commerce backend with FastAPI and Stripe integration.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary text-accent text-xs px-3 py-1 rounded-full">FastAPI</span>
+                            <span class="bg-primary text-accent text-xs px-3 py-1 rounded-full">PostgreSQL</span>
+                            <span class="bg-primary text-accent text-xs px-3 py-1 rounded-full">Docker</span>
+                        </div>
+                        <a href="#" class="text-accent hover:underline flex items-center gap-1">
+                            View Details <i data-feather="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-secondary rounded-xl overflow-hidden hover:shadow-lg transition">
+                    <img src="http://static.photos/technology/640x360/102" alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Data Analysis Tool</h3>
+                        <p class="text-gray-400 mb-4">Automated data processing pipeline with Pandas and NumPy.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary text-accent text-xs px-3 py-1 rounded-full">Pandas</span>
+                            <span class="bg-primary text-accent text-xs px-3 py-1 rounded-full">NumPy</span>
+                            <span class="bg-primary text-accent text-xs px-3 py-1 rounded-full">Matplotlib</span>
+                        </div>
+                        <a href="#" class="text-accent hover:underline flex items-center gap-1">
+                            View Details <i data-feather="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-secondary rounded-xl overflow-hidden hover:shadow-lg transition">
+                    <img src="http://static.photos/technology/640x360/103" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Task Automation</h3>
+                        <p class="text-gray-400 mb-4">CLI tool for automating repetitive tasks with Python scripts.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary text-accent text-xs px-3 py-1 rounded-full">Click</span>
+                            <span class="bg-primary text-accent text-xs px-3 py-1 rounded-full">PyInstaller</span>
+                            <span class="bg-primary text-accent text-xs px-3 py-1 rounded-full">Automation</span>
+                        </div>
+                        <a href="#" class="text-accent hover:underline flex items-center gap-1">
+                            View Details <i data-feather="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Preview -->
+        <section>
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold">Latest Articles</h2>
+                <a href="blog.html" class="text-accent hover:underline flex items-center gap-1">
+                    View All <i data-feather="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Article 1 -->
+                <div class="bg-secondary p-6 rounded-xl hover:shadow-lg transition">
+                    <h3 class="text-xl font-semibold mb-2">Optimizing Django Queries</h3>
+                    <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                        <span>May 15, 2023</span>
+                        <span class="flex items-center gap-1">
+                            <i data-feather="heart" class="w-4 h-4 text-red-400"></i> 42
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <i data-feather="message-square" class="w-4 h-4 text-accent"></i> 8
+                        </span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Learn how to reduce database queries in your Django applications with select_related and prefetch_related...
+                    </p>
+                    <a href="#" class="text-accent hover:underline">Read More</a>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="bg-secondary p-6 rounded-xl hover:shadow-lg transition">
+                    <h3 class="text-xl font-semibold mb-2">Python Type Hints Guide</h3>
+                    <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                        <span>April 28, 2023</span>
+                        <span class="flex items-center gap-1">
+                            <i data-feather="heart" class="w-4 h-4 text-red-400"></i> 36
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <i data-feather="message-square" class="w-4 h-4 text-accent"></i> 5
+                        </span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        A comprehensive guide to using type hints in Python to improve code maintainability and catch bugs early...
+                    </p>
+                    <a href="#" class="text-accent hover:underline">Read More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <!-- Components -->
+    <script src="components/navbar.js" type="module"></script>
+    <script src="components/footer.js" type="module"></script>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+<!-- <script src="https://huggingface.co/deepsite/deepsite-badge.js"></script> -->
+</body>
+</html>

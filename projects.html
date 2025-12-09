@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | CodeSage</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e293b',
+                        secondary: '#0f172a',
+                        accent: '#38bdf8'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-primary text-gray-100 min-h-screen font-sans">
+    <custom-navbar></custom-navbar>
+
+    <main class="container mx-auto px-4 py-20">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                My <span class="text-accent">Projects</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                A collection of my recent work showcasing Python development across various domains.
+            </p>
+        </div>
+        
+        <div class="mb-8 flex flex-wrap gap-4 justify-center">
+            <button class="project-filter bg-accent text-primary px-4 py-2 rounded-lg font-medium" data-filter="all">All</button>
+            <button class="project-filter bg-secondary text-gray-300 hover:bg-accent/10 px-4 py-2 rounded-lg font-medium" data-filter="web">Web</button>
+            <button class="project-filter bg-secondary text-gray-300 hover:bg-accent/10 px-4 py-2 rounded-lg font-medium" data-filter="data">Data</button>
+            <button class="project-filter bg-secondary text-gray-300 hover:bg-accent/10 px-4 py-2 rounded-lg font-medium" data-filter="automation">Automation</button>
+            <button class="project-filter bg-secondary text-gray-300 hover:bg-accent/10 px-4 py-2 rounded-lg font-medium" data-filter="api">API</button>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
+            <!-- Projects will be loaded here via JavaScript -->
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Project data
+        const projects = [
+            {
+                id: 1,
+                title: "E-Commerce API",
+                description: "A scalable e-commerce backend with FastAPI and Stripe integration.",
+                tags: ["FastAPI", "PostgreSQL", "Docker"],
+                category: "api",
+                image: "http://static.photos/technology/640x360/101"
+            },
+            {
+                id: 2,
+                title: "Data Analysis Tool",
+                description: "Automated data processing pipeline with Pandas and NumPy.",
+                tags: ["Pandas", "NumPy", "Matplotlib"],
+                category: "data",
+                image: "http://static.photos/technology/640x360/102"
+            },
+            {
+                id: 3,
+                title: "Task Automation",
+                description: "CLI tool for automating repetitive tasks with Python scripts.",
+                tags: ["Click", "PyInstaller"],
+                category: "automation",
+                image: "http://static.photos/technology/640x360/103"
+            },
+            {
+                id: 4,
+                title: "CMS Platform",
+                description: "Content management system built with Django and Vue.js.",
+                tags: ["Django", "Vue.js", "REST"],
+                category: "web",
+                image: "http://static.photos/technology/640x360/104"
+            },
+            {
+                id: 5,
+                title: "Stock Analysis",
+                description: "Machine learning models for stock market prediction.",
+                tags: ["Scikit-learn", "TensorFlow"],
+                category: "data",
+                image: "http://static.photos/technology/640x360/105"
+            },
+            {
+                id: 6,
+                title: "DevOps Dashboard",
+                description: "Monitoring dashboard for cloud infrastructure.",
+                tags: ["AWS", "Docker", "Grafana"],
+                category: "web",
+                image: "http://static.photos/technology/640x360/106"
+            }
+        ];
+
+        // Render projects
+        function renderProjects(filter = 'all') {
+            const container = document.getElementById('projects-container');
+            container.innerHTML = '';
+            
+            const filteredProjects = filter === 'all' 
+                ? projects 
+                : projects.filter(p => p.category === filter);
+            
+            filteredProjects.forEach(project => {
+                const projectEl = document.createElement('div');
+                projectEl.className = 'bg-secondary rounded-xl overflow-hidden hover:shadow-lg transition';
+                projectEl.innerHTML = `
+                    <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">${project.title}</h3>
+                        <p class="text-gray-400 mb-4">${project.description}</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            ${project.tags.map(tag => `<span class="bg-primary text-accent text-xs px-3 py-1 rounded-full">${tag}</span>`).join('')}
+                        </div>
+                        <a href="#" class="text-accent hover:underline flex items-center gap-1">
+                            View Details <i data-feather="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                `;
+                container.appendChild(projectEl);
+            });
+            
+            feather.replace();
+        }
+
+        // Filter projects
+        document.querySelectorAll('.project-filter').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.project-filter').forEach(btn => {
+                    btn.classList.remove('bg-accent', 'text-primary');
+                    btn.classList.add('bg-secondary', 'text-gray-300');
+                });
+                
+                button.classList.add('bg-accent', 'text-primary');
+                button.classList.remove('bg-secondary', 'text-gray-300');
+                
+                const filter = button.dataset.filter;
+                renderProjects(filter);
+            });
+        });
+
+        // Initial render
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjects();
+        });
+    </script>
+</body>
+</html>

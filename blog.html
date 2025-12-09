@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | CodeSage</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e293b',
+                        secondary: '#0f172a',
+                        accent: '#38bdf8'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-primary text-gray-100 min-h-screen font-sans">
+    <custom-navbar></custom-navbar>
+
+    <main class="container mx-auto px-4 py-20">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                Python <span class="text-accent">Blog</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                Thoughts, tutorials, and insights on Python development and programming.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Featured Article -->
+                <article class="bg-secondary rounded-xl overflow-hidden">
+                    <img src="http://static.photos/technology/1024x576/201" alt="Featured Article" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="text-sm text-gray-400">June 15, 2023</span>
+                            <span class="text-sm px-3 py-1 bg-accent/10 text-accent rounded-full">Featured</span>
+                        </div>
+                        <h2 class="text-2xl font-bold mb-4">Advanced Python Decorators</h2>
+                        <p class="text-gray-400 mb-6">
+                            Dive deep into Python decorators with practical examples and use cases for advanced patterns in your applications.
+                        </p>
+                        <a href="#" class="text-accent hover:underline flex items-center gap-2">
+                            Read Article <i data-feather="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Article List -->
+                <div class="space-y-6">
+                    <article class="bg-secondary p-6 rounded-xl hover:shadow-lg transition">
+                        <h3 class="text-xl font-semibold mb-2">Optimizing Django Queries</h3>
+                        <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                            <span>May 15, 2023</span>
+                            <span class="flex items-center gap-1">
+                                <i data-feather="heart" class="w-4 h-4 text-red-400"></i> 42
+                            </span>
+                            <span class="flex items-center gap-1">
+                                <i data-feather="message-square" class="w-4 h-4 text-accent"></i> 8
+                            </span>
+                        </div>
+                        <p class="text-gray-400 mb-4">
+                            Learn how to reduce database queries in your Django applications with select_related and prefetch_related...
+                        </p>
+                        <a href="#" class="text-accent hover:underline">Read More</a>
+                    </article>
+                    
+                    <article class="bg-secondary p-6 rounded-xl hover:shadow-lg transition">
+                        <h3 class="text-xl font-semibold mb-2">Python Type Hints Guide</h3>
+                        <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                            <span>April 28, 2023</span>
+                            <span class="flex items-center gap-1">
+                                <i data-feather="heart" class="w-4 h-4 text-red-400"></i> 36
+                            </span>
+                            <span class="flex items-center gap-1">
+                                <i data-feather="message-square" class="w-4 h-4 text-accent"></i> 5
+                            </span>
+                        </div>
+                        <p class="text-gray-400 mb-4">
+                            A comprehensive guide to using type hints in Python to improve code maintainability and catch bugs early...
+                        </p>
+                        <a href="#" class="text-accent hover:underline">Read More</a>
+                    </article>
+                    
+                    <article class="bg-secondary p-6 rounded-xl hover:shadow-lg transition">
+                        <h3 class="text-xl font-semibold mb-2">FastAPI Authentication</h3>
+                        <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                            <span>March 12, 2023</span>
+                            <span class="flex items-center gap-1">
+                                <i data-feather="heart" class="w-4 h-4 text-red-400"></i> 28
+                            </span>
+                            <span class="flex items-center gap-1">
+                                <i data-feather="message-square" class="w-4 h-4 text-accent"></i> 3
+                            </span>
+                        </div>
+                        <p class="text-gray-400 mb-4">
+                            Implementing JWT authentication in FastAPI with OAuth2 and password hashing...
+                        </p>
+                        <a href="#" class="text-accent hover:underline">Read More</a>
+                    </article>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="space-y-8">
+                <div class="bg-secondary p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-accent flex items-center justify-between"><span>Django</span> <span class="text-xs bg-primary text-accent px-2 py-1 rounded-full">12</span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent flex items-center justify-between"><span>FastAPI</span> <span class="text-xs bg-primary text-accent px-2 py-1 rounded-full">7</span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent flex items-center justify-between"><span>Data Science</span> <span class="text-xs bg-primary text-accent px-2 py-1 rounded-full">9</span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent flex items-center justify-between"><span>DevOps</span> <span class="text-xs bg-primary text-accent px-2 py-1 rounded-full">5</span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent flex items-center justify-between"><span>Best Practices</span> <span class="text-xs bg-primary text-accent px-2 py-1 rounded-full">14</span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="bg-secondary p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4">Popular Tags</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="#" class="text-xs bg-primary text-accent hover:bg-accent hover:text-primary px-3 py-1 rounded-full transition">Python</a>
+                        <a href="#" class="text-xs bg-primary text-accent hover:bg-accent hover:text-primary px-3 py-1 rounded-full transition">Web</a>
+                        <a href="#" class="text-xs bg-primary text-accent hover:bg-accent hover:text-primary px-3 py-1 rounded-full transition">API</a>
+                        <a href="#" class="text-xs bg-primary text-accent hover:bg-accent hover:text-primary px-3 py-1 rounded-full transition">Database</a>
+                        <a href="#" class="text-xs bg-primary text-accent hover:bg-accent hover:text-primary px-3 py-1 rounded-full transition">Performance</a>
+                        <a href="#" class="text-xs bg-primary text-accent hover:bg-accent hover:text-primary px-3 py-1 rounded-full transition">Testing</a>
+                        <a href="#" class="text-xs bg-primary text-accent hover:bg-accent hover:text-primary px-3 py-1 rounded-full transition">Security</a>
+                        <a href="#" class="text-xs bg-primary text-accent hover:bg-accent hover:text-primary px-3 py-1 rounded-full transition">Cloud</a>
+                    </div>
+                </div>
+                
+                <div class="bg-secondary p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-400 text-sm mb-4">Get the latest articles delivered to your inbox.</p>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Your email" class="w-full bg-primary border border-gray-700 rounded-lg px-4 py-3 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition">
+                        <button type="submit" class="w-full bg-accent hover:bg-blue-400 text-primary font-medium px-6 py-3 rounded-lg transition">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>
