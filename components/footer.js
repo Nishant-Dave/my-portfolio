@@ -26,7 +26,7 @@ class CustomFooter extends HTMLElement {
                     <div class="flex flex-col md:flex-row justify-between items-center">
                         <div class="mb-6 md:mb-0">
                             <a href="/" class="text-2xl font-bold text-white">
-<span class="text-accent">Code</span>Sage
+<span class="text-accent" style="color:white"> Nishant Dave </span>
                             </a>
                             <p class="text-gray-400 mt-2">Building digital solutions with Python.</p>
                         </div>
@@ -42,11 +42,11 @@ class CustomFooter extends HTMLElement {
                                 <a href="https://twitter.com/example" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-400 hover:text-accent">
                                     <i data-feather="twitter"></i>
                                 </a>
-                                <a href="mailto:hello@codesage.dev" class="social-icon text-gray-400 hover:text-accent">
+                                <a href="mailto:hello@nishant.dev" class="social-icon text-gray-400 hover:text-accent">
                                     <i data-feather="mail"></i>
                                 </a>
 </div>
-                            <p class="text-gray-500 text-sm">© ${new Date().getFullYear()} CodeSage. All rights reserved.</p>
+                            <p class="text-gray-500 text-sm">© ${new Date().getFullYear()} Nishant. All rights reserved.</p>
                         </div>
                     </div>
                 </div>
